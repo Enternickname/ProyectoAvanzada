@@ -24,8 +24,9 @@ public class Cliente {
         return num_asientos;
     }
 
-    public void setNum_asientos(ArrayList <Integer> num_asientos) {
-        this.num_asientos = num_asientos;
+    public void setNum_asientos(int[] num_asientos) {
+        for(int i=0;i<num_asientos.length;i++)
+                this.num_asientos.add(num_asientos[i]);
     }
 
     public String getId_cedula() {
@@ -66,6 +67,11 @@ public class Cliente {
 
     public void setCorreo(String correo) {
         this.correo = correo;
+    }
+    
+    public String FacturaCliente(float precio, int asientos, String placa, String cedula){
+        String fac="Ced: "+cedula+"Precio: "+(precio*asientos)+" Bus Numero:"+placa;
+        return fac;
     }
     
 }

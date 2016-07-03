@@ -17,7 +17,7 @@ public class Bus {
         this.horario = horario;
         this.num_total_asientos =55;
         for(int i=0;i<this.num_total_asientos;i++)
-            this.num_asientos.add(true);
+            this.num_asientos.add(Boolean.TRUE);
     }
     
     
@@ -44,6 +44,11 @@ public class Bus {
 
     public void setHorario(String horario) {
         this.horario = horario;
+    }
+    
+    public void reemplazo(int[] ocupados){
+        for(int i=0;i<ocupados.length;i++)
+            this.num_asientos.set(ocupados[i], Boolean.FALSE);
     }
     
     
